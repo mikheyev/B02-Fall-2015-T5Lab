@@ -1,15 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=fb
-#SBATCH --partition=compute
-#SBATCH --mem-per-cpu=4G
-#SBATCH --cpus-per-task=1
-#SBATCH --time=7-00:00:00
-#SBATCH --ntasks=1
-##SBATCH --mail-user=%u@oist.jp
-##SBATCH --mail-type=BEGIN,FAIL,END
-#SBATCH --input=none
-#SBATCH --output=%j.out
-##SBATCH --error=job_%j.err
+#$ -q short
+#$ -j y
+#$ -cwd
+#$ -N cl
+#$ -l h_vmem=10G
+#$ -l virtual_free=10G
 
 . $HOME/.bashrc
 
